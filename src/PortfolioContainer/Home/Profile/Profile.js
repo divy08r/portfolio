@@ -45,7 +45,7 @@ export default function Profile() {
                     1000,
                     "Competitive Programming📱",
                     1000,
-                    "React/React Native 🌐",
+                    "React.Js Devloper🌐",
                     1000,
                     "Git/GitHub 📈",
                     1000,

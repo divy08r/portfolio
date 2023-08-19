@@ -23,7 +23,8 @@ const Resume = (props) => {
       <div className="resume-heading">
         <div className="resume-main-heading">
           <div className="heading-bullet"></div>
-          <span>{props.heading ? props.heading : ""}</span>
+          <span>{props.heading ? props.heading : ""} <u className="heading-bullet-applink"><a href={props.applink ? props.applink : ""}>{props.linkof ? props.linkof : ""}</a></u></span>
+          
           {props.fromDate && props.toDate ? (
             <div className="heading-date">
               {props.fromDate + "-" + props.toDate}
@@ -75,27 +76,33 @@ const Resume = (props) => {
 
   const projectsDetails = [
     {
+      title: "Olympic Fit",
+      duration: { fromDate: "July 2023", toDate: "Aug 2023" },
+      description:
+        "Implemented ML based Random Forest Classifier and Logistic Regression to predict health status of athletes. The Project ranked AIR 1 in Geek Olympic 2023(Geek-a-thon) by GFG. Simplifying olympic history using Pandas and Numpy for Data analysation and Plotly and Seaborn for Data visualization.",
+      subHeading:
+        "Technologies Used: HTML, CSS, JavaScript, Bootstrap, Machine Learning, Flask.",
+      applink: "https://ml-geek-olympic-trial.onrender.com/",
+      linkof: "App link",
+    },
+    {
+      title: "Green Delight",
+      duration: { fromDate: "Mar 2023", toDate: "April 2023" },
+      description:
+        "Implemented CRUD operations on managing products and farmer details. ML based Crop prediction which determine the best crop suitable for your farm using models like Linear Regression,Decision Tree,etc. Project selected for regionals for Solving for India Hackathon organised by GFG.",
+      subHeading:
+        "Technologies Used:  HTML, CSS, JavaScript, MERN, Machine Learning",
+      applink: "https://github.com/divy08r/website-design",
+      linkof: "Source Code",
+    },
+    {
       title: "Personal Portfolio Website",
       duration: { fromDate: "Aug 2023", toDate: "Sept 2023" },
       description:
         "A Personal Portfolio website to showcase all my details and projects at one place.",
       subHeading: "Technologies Used: React JS, Bootsrap",
-    },
-    {
-      title: "Green Delight - Get Organic Product at your Doorstep",
-      duration: { fromDate: "Mar 2023", toDate: "April 2023" },
-      description:
-        "An ecommerce application designed to sell organic products online directly from Farmer to Customer",
-      subHeading:
-        "Technologies Used:  React Native, Mongo DB, Express Js, Node Js.",
-    },
-    {
-      title: "Olympic Fit",
-      duration: { fromDate: "July 2023", toDate: "Aug 2023" },
-      description:
-        "Implemented ML based Random Forest Classifier and Logistic Regression to predict health status of athletes.",
-      subHeading:
-        "Technologies Used: HTML, CSS, JavaScript, Bootstrap, Machine Learning, Flask.",
+      applink: "https://divy08r.github.io/portfolio/",
+      linkof: "App link",
     },
   ];
 
@@ -128,7 +135,7 @@ const Resume = (props) => {
       <div className="experience-container">
         <ResumeHeading
           heading="Web Team NIT Jamshedpur"
-          subHeading="I am an active member of club"
+          subHeading="Worked on Official website of NIT Jamshedpur"
           fromDate={"Feb 2023"}
           toDate={"Present"}
         />
@@ -172,12 +179,17 @@ const Resume = (props) => {
           description={projectsDetails.description}
           fromDate={projectsDetails.duration.fromDate}
           toDate={projectsDetails.duration.toDate}
+          applink={projectsDetails.applink}
+          linkof={projectsDetails.linkof}
         />
       ))}
     </div>,
 
     /* Achievements */
     <div className="resume-screen-container" key="interests">
+      <ResumeHeading
+        heading="Got AIR 1 in Geek Olympic 2023(Geek-a-thon) Hackathon."
+      />
       <ResumeHeading
         heading="Regionalist of Solving for India Hackathon organised by GFG powered by Goolge Cloud and AMD"
         LinkTitle="View Certificate"
